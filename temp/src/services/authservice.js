@@ -3,7 +3,7 @@ const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const JwtToken = require('../utils/jwt.utils');
 // const User = require('../models/users');
-const Users = require('../models/users');
+// const Users = require('../models/users');
 
 class AuthService {
   saltRounds = 10; // Number of salt rounds to use
@@ -68,15 +68,15 @@ class AuthService {
           });
           fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
 
-          Users.create({
-            username: this.userName,
-            email: this.email,
-            password: result,
-          }).then((user) => {
-            console.log('data inserted...', user.toJSON());
-          }).catch((error) => {
-            console.error('Error', error);
-          });
+          // Users.create({
+          //   username: this.userName,
+          //   email: this.email,
+          //   password: result,
+          // }).then((user) => {
+          //   console.log('data inserted...', user.toJSON());
+          // }).catch((error) => {
+          //   console.error('Error', error);
+          // });
 
           return { message: 'Signup successful', code: 200 };
         }
