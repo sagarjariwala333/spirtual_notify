@@ -1,0 +1,6 @@
+FROM node
+RUN mkdir app/
+COPY node_exe ./
+WORKdir ./app/node_exe/
+RUN npm install
+CMD ["node","app.js"]
