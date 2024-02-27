@@ -45,10 +45,15 @@ if (!fs.existsSync('users.json')) {
 // app.use((req, res, next) => {
 //   authMiddleware(req, res, next);
 // });
+
 app.use('/', userRouter);
 app.use('/user', userlistRouter);
 
 // eslint-disable-next-line no-console
 app.listen(PORT, console.log(`server running at port ${PORT}`));
+
+app.get('/index', (req, res) => {
+  res.send('Hello World');
+});
 
 // module.exports = sequelize;
