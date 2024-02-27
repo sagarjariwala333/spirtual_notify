@@ -11,7 +11,7 @@ const PORT = 3000;
 const userRouter = require('./src/routes/routes');
 const userlistRouter = require('./src/routes/userRoutes');
 
-const authMiddleware = require('./src/middlewares/auth.middleware');
+// const authMiddleware = require('./src/middlewares/auth.middleware');
 
 // const Connection = require('./src/utils/connection.util');
 
@@ -42,9 +42,9 @@ if (!fs.existsSync('users.json')) {
   fs.writeFileSync('users.json', '[]');
 }
 
-app.use((req, res, next) => {
-  authMiddleware(req, res, next);
-});
+// app.use((req, res, next) => {
+//   authMiddleware(req, res, next);
+// });
 app.use('/', userRouter);
 app.use('/user', userlistRouter);
 
