@@ -1,10 +1,13 @@
 /* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
 const express = require('express');
+const cors = require('cors');
 
 const fs = require('fs');
 
 const app = express();
+
+app.use(cors());
 
 const PORT = 3000;
 // const { Sequelize } = require('sequelize');
