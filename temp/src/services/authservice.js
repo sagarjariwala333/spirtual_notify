@@ -68,16 +68,6 @@ class AuthService {
           });
           fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
 
-          // Users.create({
-          //   username: this.userName,
-          //   email: this.email,
-          //   password: result,
-          // }).then((user) => {
-          //   console.log('data inserted...', user.toJSON());
-          // }).catch((error) => {
-          //   console.error('Error', error);
-          // });
-
           return { message: 'Signup successful', code: 200 };
         }
 
@@ -87,7 +77,7 @@ class AuthService {
         return { message: err, code: 200 };
       });
 
-      return { message: 'Something went wrong', code: 404 };
+      return { message: 'Success', code: 200 };
     } catch (err) {
       return { message: err.toString(), code: 404 };
     }
